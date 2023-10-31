@@ -64,7 +64,7 @@ import java.util.Vector;
 
 
 public class TflitePlugin implements FlutterPlugin, MethodCallHandler, ActivityAware {
-  private Activity activity
+  private Activity activity;
   private Interpreter tfLite;
   private boolean tfLiteBusy = false;
   private int inputSize = 0;
