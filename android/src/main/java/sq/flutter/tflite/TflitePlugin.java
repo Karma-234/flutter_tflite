@@ -113,6 +113,15 @@ public class TflitePlugin implements FlutterPlugin, MethodCallHandler, ActivityA
   public void onDetachedFromActivityForConfigChanges() {
     this.onDetachedFromActivity();
   }
+  @Override
+  public void onReattachedToActivityForConfigChanges(@NonNull ActivityPluginBinding binding) {
+    this.onAttachedToActivity(binding);
+  }
+
+  @Override
+  public void onDetachedFromEngine(@NonNull FlutterPluginBinding binding) {
+    channel.setMethodCallHandler(null);
+  }
 
   @Override
   public void onMethodCall(@NonNull MethodCall call,@NonNull Result result) {
